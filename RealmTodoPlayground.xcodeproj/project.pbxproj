@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		6737477A237BFD8300CA7CC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67374778237BFD8300CA7CC7 /* Main.storyboard */; };
 		6737477C237BFD8500CA7CC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6737477B237BFD8500CA7CC7 /* Assets.xcassets */; };
 		6737477F237BFD8500CA7CC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6737477D237BFD8500CA7CC7 /* LaunchScreen.storyboard */; };
+		67374787237C019900CA7CC7 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67374786237C019900CA7CC7 /* TodoItem.swift */; };
 		D5AFD1872E835737D4C7DA9B /* Pods_RealmTodoPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D116933C71AAA440C2C70D /* Pods_RealmTodoPlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		6737477B237BFD8500CA7CC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6737477E237BFD8500CA7CC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67374780237BFD8500CA7CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67374786237C019900CA7CC7 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		77D116933C71AAA440C2C70D /* Pods_RealmTodoPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmTodoPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		896CDA1B43133ED5060F849B /* Pods-RealmTodoPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTodoPlayground.debug.xcconfig"; path = "Target Support Files/Pods-RealmTodoPlayground/Pods-RealmTodoPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 		A647C1419AB9757975F8AF92 /* Pods-RealmTodoPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTodoPlayground.release.xcconfig"; path = "Target Support Files/Pods-RealmTodoPlayground/Pods-RealmTodoPlayground.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				6737477B237BFD8500CA7CC7 /* Assets.xcassets */,
 				6737477D237BFD8500CA7CC7 /* LaunchScreen.storyboard */,
 				67374780237BFD8500CA7CC7 /* Info.plist */,
+				67374786237C019900CA7CC7 /* TodoItem.swift */,
 			);
 			path = RealmTodoPlayground;
 			sourceTree = "<group>";
@@ -80,7 +83,6 @@
 				896CDA1B43133ED5060F849B /* Pods-RealmTodoPlayground.debug.xcconfig */,
 				A647C1419AB9757975F8AF92 /* Pods-RealmTodoPlayground.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,6 +211,7 @@
 			files = (
 				67374777237BFD8300CA7CC7 /* ViewController.swift in Sources */,
 				67374773237BFD8300CA7CC7 /* AppDelegate.swift in Sources */,
+				67374787237C019900CA7CC7 /* TodoItem.swift in Sources */,
 				67374775237BFD8300CA7CC7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,16 +357,20 @@
 			baseConfigurationReference = 896CDA1B43133ED5060F849B /* Pods-RealmTodoPlayground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RealmTodoPlayground/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yamatatsu-tech.RealmTodoPlayground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -372,16 +379,20 @@
 			baseConfigurationReference = A647C1419AB9757975F8AF92 /* Pods-RealmTodoPlayground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RealmTodoPlayground/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yamatatsu-tech.RealmTodoPlayground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
