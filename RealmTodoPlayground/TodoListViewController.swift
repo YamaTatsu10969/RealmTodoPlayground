@@ -90,7 +90,6 @@ private extension TodoListViewController {
             result.setValue(title, forKey: "title")
         }
     }
-
 }
 
 extension TodoListViewController: UITableViewDataSource {
