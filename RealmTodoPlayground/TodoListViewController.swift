@@ -67,16 +67,27 @@ private extension TodoListViewController {
 }
 
 private extension TodoListViewController {
-    
+    /// 追加処理
     func addTodoItem(title: String) {
         try! realm.write {
             realm.add(TodoItem(value: ["title": title]))
         }
     }
-    
+    /// 消去
     func deleteTodoItem(at index: Int) {
         try! realm.write {
+            // オブジェクトそのまま送るだけで削除できるのか！すごい。
             realm.delete(todoList[index])
+        }
+    }
+    
+    func updateTodoItem(at index: Int, title: String) {
+        // クエリの発行の仕方 →　https://swift.hiros-dot.net/?p=632#toc5
+        // これも参考になる →　https://dev.classmethod.jp/smartphone/realmswift-introduction/
+        // 公式ドキュメント　→　https://realm.io/docs/swift/latest/#queries
+        let result = realm.objects(TodoItem.self).filter("title == '\(todoList[index].title)'")
+        try! realm.write {
+            result.setValue(title, forKey: "title")
         }
     }
 
@@ -103,5 +114,16 @@ extension TodoListViewController: UITableViewDataSource {
 }
 
 extension TodoListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dialog = UIAlertController(title: "Todo更新", message: "", preferredStyle: .alert)
+        dialog.addTextField { textField in
+            textField.text = self.todoList[indexPath.row].title
+        }
+        dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            if let text = dialog.textFields![0].text, !text.isEmpty {
+                self.updateTodoItem(at: indexPath.row, title: text)
+            }
+        }))
+        present(dialog, animated: true)
+    }
 }
