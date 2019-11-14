@@ -27,6 +27,7 @@ class TodoListViewController: UIViewController {
         setupRealm()
         setupTableView()
         setupNavigationBar()
+        addKeyCommand(UIKeyCommand(title: "test", action: #selector(addButtonTapped(_:)), input: "N"))
     }
 }
 
@@ -60,6 +61,10 @@ private extension TodoListViewController {
             }
         }))
         present(dialog, animated: true)
+    }
+    
+    @objc func addButtonTapped2(_ sender: Any) {
+        print("どうも")
     }
 }
 
